@@ -1,6 +1,7 @@
 add_library(
   mizcore_util
-  miz_controller.cpp)
+  miz_controller.cpp
+  emwiki_interface.cpp)
 add_library(mizcore::util ALIAS mizcore_util)
 
 target_link_libraries(
