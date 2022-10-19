@@ -10,25 +10,36 @@ class NumeralToken;
 
 class PyNumeralToken : public NumeralToken
 {
-  using NumeralToken::NumeralToken;
+  public:
+    using NumeralToken::NumeralToken;
 
-  std::string_view GetText() const override
-  {
-    PYBIND11_OVERRIDE
-    (
-      std::string_view,
-      NumeralToken,
-      GetText,
-    );
-  }
+    std::string_view GetText() const override
+    {
+      PYBIND11_OVERRIDE
+      (
+        std::string_view,
+        NumeralToken,
+        GetText,
+      );
+    }
 
-  TOKEN_TYPE GetTokenType() const override
+    TOKEN_TYPE GetTokenType() const override
     {
       PYBIND11_OVERRIDE
       (
         TOKEN_TYPE,
         NumeralToken,
         GetTokenType,
+      );
+    }
+
+    IdentifierToken* GetRefToken() const override
+    {
+      PYBIND11_OVERRIDE
+      (
+        IdentifierToken*,
+        NumeralToken,
+        GetRefToken,
       );
     }
 };
